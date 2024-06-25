@@ -79,7 +79,7 @@ export function YIN(params: Partial<YinConfig> = {}): PitchDetector {
     // Compute the absolute threshold as described in step 4 of the paper.
     // Since the first two positions in the array are 1,
     // we can start at the third position.
-    for (tau = 2; tau < yinBufferLength; tau++) {
+    for (tau = 50; tau < yinBufferLength; tau++) {
       if (yinBuffer[tau] < threshold) {
         while (tau + 1 < yinBufferLength && yinBuffer[tau + 1] < yinBuffer[tau]) {
           tau++;
